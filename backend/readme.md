@@ -129,3 +129,16 @@ You will need three separate terminals for the FastAPI server and the Celery ser
 
 The application will be available at `http://localhost:8000`. Remember to create the `videos` bucket in MinIO.
 
+## API Documentation
+
+Once the server is running, you can access the API documentation at:
+
+- Swagger UI: http://localhost:8000/docs
+- ReDoc: http://localhost:8000/redoc
+
+## Troubleshooting
+
+- If you encounter issues with MinIO, ensure the bucket 'videos' is created.
+- For Redis connection issues, check if the Redis container is running.
+- Ensure all API keys are correctly set in the `.env` file.
+
