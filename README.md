@@ -171,6 +171,20 @@ This launches the Next.js app on the default development port.
 
 ---
 
+## Roadmap
+
+### V1.1 (Q4 2025)
+- Advanced AI features: Custom model fine-tuning
+- Support for additional platforms: TikTok, Facebook
+- Enhanced video editing capabilities
+
+### V2.0 (Q1 2026)
+- Analytics dashboard for content performance
+- Team collaboration features
+- API for third-party integrations
+
+---
+
 ## Contributing
 
 PRs and issues are welcome. Please open an issue first to discuss major changes.
