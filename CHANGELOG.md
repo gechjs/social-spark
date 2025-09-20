@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Initial project setup with backend, web, and mobile components
 - AI-powered content generation for captions, images, and videos
 - Flutter mobile app with content creation features
@@ -15,7 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Docker containerization for backend services
 
 ### Changed
+
 - Updated README with roadmap and installation instructions
 
 ### Fixed
+
 - Improved backend documentation with API docs and troubleshooting
