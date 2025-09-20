@@ -11,14 +11,11 @@ Before you begin, ensure you have the following installed and configured:
 3.  **[Pixabay API key](https://pixabay.com/api/docs/)**
 4.  **[Gemini API key](https://ai.google.dev/pricing)**
 5.  **[Freesound API key](https://freesound.org/docs/api/)**
-6. **[Ayrshare API Key](https://www.ayrshare.com/)**  
-  SocialSpark uses Ayrshare to publish image-only posts to social media platforms (Instagram, Facebook,  etc.), and users must link their accounts via the Ayrshare dashboard.
-
-   1. Go to [Ayrshare Dashboard](https://app.ayrshare.com/auth/register) and create a free account.  
-   2. After signing in, navigate to **API Key** in your Ayrshare dashboard.  
-   3. Copy your API key and paste it into your `.env` file.
-
-
+6.  **[Ayrshare API Key](https://www.ayrshare.com/)**  
+    SocialSpark uses Ayrshare to publish image-only posts to social media platforms (Instagram, Facebook, etc.), and users must link their accounts via the Ayrshare dashboard.
+    1.  Go to [Ayrshare Dashboard](https://app.ayrshare.com/auth/register) and create a free account.
+    2.  After signing in, navigate to **API Key** in your Ayrshare dashboard.
+    3.  Copy your API key and paste it into your `.env` file.
 
 ## Getting Started (Docker - Recommended)
 
@@ -59,7 +56,7 @@ Build and start all the services (FastAPI web server, Redis, MinIO, Celery Worke
 
 ```sh
 sudo docker compose build # (only the first time you run it)
-sudo docker compose up 
+sudo docker compose up
 ```
 
 The application will be available at `http://localhost:8000`, and the MinIO console will be at `http://localhost:9001`.
@@ -101,31 +98,31 @@ cp .env.example .env
 
 You will need to run MinIO and Redis in separate terminals.
 
--   **Run MinIO with Docker:**
-    ```sh
-    sudo docker run -dp 9000:9000 -p 9001:9001 -e "MINIO_ROOT_USER=admin"  -e "MINIO_ROOT_PASSWORD=admin123" quay.io/minio/minio server /data --console-address ":9001"
-    ```
--   **Run Redis with Docker:**
-    ```sh
-    sudo docker run -d --name redis -p 6379:6379 redis:latest
-    ```
+- **Run MinIO with Docker:**
+  ```sh
+  sudo docker run -dp 9000:9000 -p 9001:9001 -e "MINIO_ROOT_USER=admin"  -e "MINIO_ROOT_PASSWORD=admin123" quay.io/minio/minio server /data --console-address ":9001"
+  ```
+- **Run Redis with Docker:**
+  ```sh
+  sudo docker run -d --name redis -p 6379:6379 redis:latest
+  ```
 
 ### 4. Run the Application
 
 You will need three separate terminals for the FastAPI server and the Celery services.
 
--   **Terminal 1: Run the FastAPI Server**
-    ```sh
-    fastapi dev delivery/main.py
-    ```
--   **Terminal 2: Run the Celery Worker**
-    ```sh
-    celery -A infrastructure.celery_app worker --loglevel=info
-    ```
--   **Terminal 3: Run Celery Beat (Scheduler)**
-    ```sh
-    celery -A infrastructure.celery_app beat --loglevel=info
-    ```
+- **Terminal 1: Run the FastAPI Server**
+  ```sh
+  fastapi dev delivery/main.py
+  ```
+- **Terminal 2: Run the Celery Worker**
+  ```sh
+  celery -A infrastructure.celery_app worker --loglevel=info
+  ```
+- **Terminal 3: Run Celery Beat (Scheduler)**
+  ```sh
+  celery -A infrastructure.celery_app beat --loglevel=info
+  ```
 
 The application will be available at `http://localhost:8000`. Remember to create the `videos` bucket in MinIO.
 
@@ -141,4 +138,3 @@ Once the server is running, you can access the API documentation at:
 - If you encounter issues with MinIO, ensure the bucket 'videos' is created.
 - For Redis connection issues, check if the Redis container is running.
 - Ensure all API keys are correctly set in the `.env` file.
-
